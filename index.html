@@ -9,14 +9,14 @@
         function init(){
             let canvas = document.getElementById("mainCanvas");
             let ctx = canvas.getContext("2d");
-
+// game board
             ctx.fillStyle = "#fffbb3";
             ctx.strokeStyle = "#989681"; 
 
             ctx.lineWidth = 2;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.strokeRect(1, 1, canvas.width-2, canvas.height-2);
-            
+// game cells   
             let cellSize = 40;
             ctx.beginPath();
 
@@ -33,6 +33,42 @@
             ctx.lineWidth = 1;
             ctx.strokeStyle = "#989681"; 
             ctx.stroke();
+// dots
+            let data = [
+                [0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0],
+                [0,0,0,2,1,0,0],
+                [0,0,2,1,1,2,0],
+            ]
+
+            ctx.strokeStyle="#000";
+            ctx.lineWidth=3;
+
+            for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < data.length; j++) {
+                    let value = data[i][j];
+                    if (!value) {
+                        continue;
+                    }
+
+                    switch (value) {
+                        case 1:
+                            ctx.fillStyle = "#000"
+                            break;
+                        case 2:
+                            ctx.fillStyle = "#fff"
+                            break;
+                        // default:
+                        //     break;
+                    }
+                    ctx.beginPath();
+                    ctx.arc((j+0.5)*cellSize, (i+0.5)*cellSize, cellSize/2 - 5, 0, 2*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+                }
+            }
         }
         </script> 
     </head>
