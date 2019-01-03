@@ -9,6 +9,7 @@ Description:
 Technology stack:
 -------------
 * HTML5,
+* HTML5 Canvas,
 * Java Script (ES6)
 
 

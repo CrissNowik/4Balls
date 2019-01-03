@@ -9,21 +9,14 @@
         function init(){
             let canvas = document.getElementById("mainCanvas");
             let ctx = canvas.getContext("2d");
-// game board
-            ctx.fillStyle = "#fffbb3";
-            ctx.strokeStyle = "#989681"; 
 
-            ctx.lineWidth = 2;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeRect(1, 1, canvas.width-2, canvas.height-2);
- // gradient
+// gradient
             let gradient = ctx.createLinearGradient(0,0,0, 300);
 
             gradient.addColorStop(0, '#fff');
             gradient.addColorStop(1, '#c6c602');
             ctx.fillStyle = gradient;
             ctx.fillRect(0,0, canvas.width, canvas.height);
-
 //curves on background
             ctx.strokeStyle = "#6f6e62";
             ctx.fillStyle = "#e8b948";
@@ -37,25 +30,39 @@
             ctx.moveTo(50,0);
             ctx.bezierCurveTo(150,100, 150,100, 250,0);
             ctx.fill();
-
+// game board
+            ctx.fillStyle = "#fffbb3";
+            ctx.strokeStyle = "#989681"; 
+            ctx.lineWidth = 2;
+            // ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeRect(1, 1, canvas.width-2, canvas.height-2);
+            
 // game cells   
             let cellSize = 40;
-            ctx.beginPath();
+            let gridWidth = cellSize*7;
+            let gridHeight = cellSize*6;
+            let gridOffsetLeft = Math.floor((canvas.width - gridWidth)/2);
+            let gridOffsetTop = Math.floor((canvas.height - gridHeight)/2);
 
+            ctx.save();
+            ctx.translate(gridOffsetLeft, gridOffsetTop);
+// drawing game cells
+            ctx.beginPath();
+// drawing vertical lines
             for (let i = 0; i < 8; i++) {
                ctx.moveTo(i*cellSize + 0.5, 0);
                ctx.lineTo(i*cellSize + 0.5, cellSize*6 )                
             }
-
+// drawing horizontal lines
             for (let j = 0; j < 7; j++) {
                ctx.moveTo(0, j*cellSize + 0.5);
                ctx.lineTo(cellSize*7, j*cellSize + 0.5 )                
             }
-
+// stroking in order to screen lines
             ctx.lineWidth = 1;
             ctx.strokeStyle = "#989681"; 
             ctx.stroke();
-// dots
+// dots info
             let data = [
                 [0,0,0,0,0,0,0],
                 [0,0,0,0,0,0,0],
@@ -67,7 +74,7 @@
 
             ctx.strokeStyle="#000";
             ctx.lineWidth=3;
-
+// drawing dots
             for (let i = 0; i < data.length; i++) {
                 for (let j = 0; j < data.length; j++) {
                     let value = data[i][j];
@@ -85,25 +92,32 @@
                         // default:
                         //     break;
                     }
-
+                    // ctx.save();
+                    // ctx.translate((j + 0.5) * cellSize, (i + 0.5) * cellSize);
+// gradient of dots
+    // dots center
                 let x = (j + 0.5) * cellSize;
                 let y = (i + 0.5) * cellSize;
                 let radius = cellSize * 0.4;
+    // gradient center
                 let gradientX = x + cellSize * 0.1;
                 let gradientY = y - cellSize * 0.1;
 
                 let gradient = ctx.createRadialGradient(
-                    gradientX, gradientY, cellSize*0.1, gradientX, gradientY, radius*1.2);
+                    gradientX, gradientY, cellSize*0.1, // inner circle
+                    gradientX, gradientY, radius*1.2);  // outer circle
 
-                gradient.addColorStop(0, "yellow");
-                gradient.addColorStop(1, color);
+                gradient.addColorStop(0, "yellow");     // light
+                gradient.addColorStop(1, color);        // dot color
                 ctx.fillStyle = gradient;
 
                 ctx.beginPath();
-                ctx.arc((j+0.5)*cellSize, (i+0.5)*cellSize, cellSize/2 - 5, 0, 2*Math.PI, false);
+                ctx.arc(x, y, radius, 0, 2*Math.PI, true);
                 ctx.fill();
+                
                 }
             }
+            ctx.restore();
         }
         </script> 
     </head>
