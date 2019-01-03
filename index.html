@@ -16,6 +16,28 @@
             ctx.lineWidth = 2;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.strokeRect(1, 1, canvas.width-2, canvas.height-2);
+ // gradient
+            let gradient = ctx.createLinearGradient(0,0,0, 300);
+
+            gradient.addColorStop(0, '#fff');
+            gradient.addColorStop(1, '#c6c602');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0,0, canvas.width, canvas.height);
+
+//curves on background
+            ctx.strokeStyle = "#6f6e62";
+            ctx.fillStyle = "#e8b948";
+
+            ctx.beginPath();
+            ctx.moveTo(50,300);
+            ctx.bezierCurveTo(450,-50, -150,-50, 250,300);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(50,0);
+            ctx.bezierCurveTo(150,100, 150,100, 250,0);
+            ctx.fill();
+
 // game cells   
             let cellSize = 40;
             ctx.beginPath();
@@ -52,21 +74,34 @@
                     if (!value) {
                         continue;
                     }
-
+                    let color;
                     switch (value) {
                         case 1:
-                            ctx.fillStyle = "#000"
+                            color = "#000"
                             break;
                         case 2:
-                            ctx.fillStyle = "#fff"
+                            color = "#7f796c"
                             break;
                         // default:
                         //     break;
                     }
-                    ctx.beginPath();
-                    ctx.arc((j+0.5)*cellSize, (i+0.5)*cellSize, cellSize/2 - 5, 0, 2*Math.PI, false);
-                    ctx.fill();
-                    ctx.stroke();
+
+                let x = (j + 0.5) * cellSize;
+                let y = (i + 0.5) * cellSize;
+                let radius = cellSize * 0.4;
+                let gradientX = x + cellSize * 0.1;
+                let gradientY = y - cellSize * 0.1;
+
+                let gradient = ctx.createRadialGradient(
+                    gradientX, gradientY, cellSize*0.1, gradientX, gradientY, radius*1.2);
+
+                gradient.addColorStop(0, "yellow");
+                gradient.addColorStop(1, color);
+                ctx.fillStyle = gradient;
+
+                ctx.beginPath();
+                ctx.arc((j+0.5)*cellSize, (i+0.5)*cellSize, cellSize/2 - 5, 0, 2*Math.PI, false);
+                ctx.fill();
                 }
             }
         }
