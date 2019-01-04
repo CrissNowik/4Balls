@@ -2,14 +2,70 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>Page Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"/>
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+        </style>
         <script>
+            let canvas;
+            let ctx;
         function init(){
-            let canvas = document.getElementById("mainCanvas");
-            let ctx = canvas.getContext("2d");
+            canvas = initFullScreenCanvas("mainCanvas");
+            ctx = canvas.getContext("2d");
+            repaint();
+/**
+fitting canvas to page size
+@param canvasID - string - ID of html canvas tag
+*/
+            function initFullScreenCanvas(canvasID) {
+                let canvas = document.getElementById(canvasID);
+                resizeCanvas(canvas);
+                window.addEventListener("resize", function () {
+                    resizeCanvas(canvas);
+                });
+                return canvas;
+            }
+/**
+change canvas size
+*/
+            function resizeCanvas(canvas) {
+                canvas.width = document.width || document.body.clientWidth;
+                canvas.height = document.height || document.body.clientHeight;
+                // inform main game object about resize!!!!!!
+                repaint();
+            }
+// blocking game orientation
+            function repaint() {
+                if (!ctx) {
+                    return;
+                }
+                ctx.fillStyle = "#fff";
+                ctx.fillRect(0,0, canvas.width, canvas.height);
 
+                reorient();
+                ctx.fillStyle = "darkgreen";
+                ctx.fillRect(10, 10, 250, 30);
+            }
+
+            function reorient() {
+                let angle = window.orientation;
+                if (angle) {
+                    let rot = -Math.PI*(angle/180);
+                    ctx.translate(
+                        angle == -90 ? canvas.width : 0, 
+                        angle == 90 ? canvas.height : 0);
+                        ctx.rotate(rot);
+                }
+            }
 // gradient
             let gradient = ctx.createLinearGradient(0,0,0, 300);
 
