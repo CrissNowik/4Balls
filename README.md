@@ -4,8 +4,6 @@
 Description:
 -------------
 
-
-
 Technology stack:
 -------------
 * HTML5,
