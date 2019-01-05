@@ -3,9 +3,7 @@
 
 Description:
 -------------
-
-
-
+some description
 
 Technology stack:
 -------------
