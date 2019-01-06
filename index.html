@@ -68,25 +68,25 @@ change canvas size
                 }
             }
 // gradient
-            let gradient = ctx.createLinearGradient(0,0,0, 300);
+            // let gradient = ctx.createLinearGradient(0,0,0, 300);
 
-            gradient.addColorStop(0, '#fff');
-            gradient.addColorStop(1, '#c6c602');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0,0, canvas.width, canvas.height);
+            // gradient.addColorStop(0, '#fff');
+            // gradient.addColorStop(1, '#c6c602');
+            // ctx.fillStyle = gradient;
+            // ctx.fillRect(0,0, canvas.width, canvas.height);
 //curves on background
-            ctx.strokeStyle = "#6f6e62";
-            ctx.fillStyle = "#e8b948";
+            // ctx.strokeStyle = "#6f6e62";
+            // ctx.fillStyle = "#e8b948";
 
-            ctx.beginPath();
-            ctx.moveTo(50,300);
-            ctx.bezierCurveTo(450,-50, -150,-50, 250,300);
-            ctx.fill();
+            // ctx.beginPath();
+            // ctx.moveTo(50,300);
+            // ctx.bezierCurveTo(450,-50, -150,-50, 250,300);
+            // ctx.fill();
 
-            ctx.beginPath();
-            ctx.moveTo(50,0);
-            ctx.bezierCurveTo(150,100, 150,100, 250,0);
-            ctx.fill();
+            // ctx.beginPath();
+            // ctx.moveTo(50,0);
+            // ctx.bezierCurveTo(150,100, 150,100, 250,0);
+            // ctx.fill();
 // game board
             ctx.fillStyle = "#fffbb3";
             ctx.strokeStyle = "#989681"; 
@@ -105,20 +105,20 @@ change canvas size
             ctx.translate(gridOffsetLeft, gridOffsetTop);
 // drawing game cells
             ctx.beginPath();
-// drawing vertical lines
-            for (let i = 0; i < 8; i++) {
-               ctx.moveTo(i*cellSize + 0.5, 0);
-               ctx.lineTo(i*cellSize + 0.5, cellSize*6 )                
-            }
-// drawing horizontal lines
-            for (let j = 0; j < 7; j++) {
-               ctx.moveTo(0, j*cellSize + 0.5);
-               ctx.lineTo(cellSize*7, j*cellSize + 0.5 )                
-            }
+// // drawing vertical lines
+//             for (let i = 0; i < 8; i++) {
+//                ctx.moveTo(i*cellSize + 0.5, 0);
+//                ctx.lineTo(i*cellSize + 0.5, cellSize*6 )                
+//             }
+// // drawing horizontal lines
+//             for (let j = 0; j < 7; j++) {
+//                ctx.moveTo(0, j*cellSize + 0.5);
+//                ctx.lineTo(cellSize*7, j*cellSize + 0.5 )                
+//             }
 // stroking in order to screen lines
-            ctx.lineWidth = 1;
-            ctx.strokeStyle = "#989681"; 
-            ctx.stroke();
+            // ctx.lineWidth = 1;
+            // ctx.strokeStyle = "#989681"; 
+            // ctx.stroke();
 // dots info
             let data = [
                 [0,0,0,0,0,0,0],
@@ -135,46 +135,46 @@ change canvas size
             for (let i = 0; i < data.length; i++) {
                 for (let j = 0; j < data.length; j++) {
                     let value = data[i][j];
-                    if (!value) {
-                        continue;
-                    }
-                    let color;
-                    switch (value) {
-                        case 1:
-                            color = "#000"
-                            break;
-                        case 2:
-                            color = "#7f796c"
-                            break;
-                        // default:
-                        //     break;
-                    }
+                    // if (!value) {
+                    //     continue;
+                    // }
+                    // let color;
+                    // switch (value) {
+                    //     case 1:
+                    //         color = "#000"
+                    //         break;
+                    //     case 2:
+                    //         color = "#7f796c"
+                    //         break;
+                    //     // default:
+                    //     //     break;
+                    // }
                     // ctx.save();
                     // ctx.translate((j + 0.5) * cellSize, (i + 0.5) * cellSize);
 // gradient of dots
     // dots center
-                let x = (j + 0.5) * cellSize;
-                let y = (i + 0.5) * cellSize;
-                let radius = cellSize * 0.4;
+                // let x = (j + 0.5) * cellSize;
+                // let y = (i + 0.5) * cellSize;
+                // let radius = cellSize * 0.4;
     // gradient center
-                let gradientX = x + cellSize * 0.1;
-                let gradientY = y - cellSize * 0.1;
+            //     let gradientX = x + cellSize * 0.1;
+            //     let gradientY = y - cellSize * 0.1;
 
-                let gradient = ctx.createRadialGradient(
-                    gradientX, gradientY, cellSize*0.1, // inner circle
-                    gradientX, gradientY, radius*1.2);  // outer circle
+            //     let gradient = ctx.createRadialGradient(
+            //         gradientX, gradientY, cellSize*0.1, // inner circle
+            //         gradientX, gradientY, radius*1.2);  // outer circle
 
-                gradient.addColorStop(0, "yellow");     // light
-                gradient.addColorStop(1, color);        // dot color
-                ctx.fillStyle = gradient;
+            //     gradient.addColorStop(0, "yellow");     // light
+            //     gradient.addColorStop(1, color);        // dot color
+            //     ctx.fillStyle = gradient;
 
-                ctx.beginPath();
-                ctx.arc(x, y, radius, 0, 2*Math.PI, true);
-                ctx.fill();
+            //     ctx.beginPath();
+            //     ctx.arc(x, y, radius, 0, 2*Math.PI, true);
+            //     ctx.fill();
                 
                 }
             }
-            ctx.restore();
+            // ctx.restore();
         }
         </script> 
     </head>
@@ -182,4 +182,3 @@ change canvas size
         <canvas id="mainCanvas" width="300px" height="300px"></canvas>
     </body> 
 </html>
-
