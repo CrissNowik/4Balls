@@ -35,7 +35,7 @@ _p.repaint = function () {
     
     for (let i = 0; i < this._cols; i++) {
         for (let j = 0; j < this._rows; j++) {
-            this._drawToken(i,j);        
+            this.drawToken(i,j);        
         }  
     }
 };
@@ -76,8 +76,8 @@ _p._drawGrid = function(){
     ctx.beginPath();
 // drawing vertical lines
     for (let i = 0; i <= this._cols; i++) {
-        ctx.moveTo(i*_cellSize + 0.5, 0.5);
-        ctx.lineTo(i*_cellSize + 0.5, this._height + 0.5);                
+        ctx.moveTo(i*this._cellSize + 0.5, 0.5);
+        ctx.lineTo(i*this._cellSize + 0.5, this._height + 0.5);                
     }
 // drawing horizontal lines
     for (let j = 0; j <= this._rows; j++) {
@@ -85,8 +85,8 @@ _p._drawGrid = function(){
         ctx.lineTo(this._width + 0.5, j*this._cellSize + 0.5 );                
     }
 // draw outline
-    ctx.strokeStyle = "#ccc";
-    ctx.stroke();
+    ctx.strokeStyle = "#CCC";
+    ctx.stroke()
 };
 /**
  * draw single dot with gradient

@@ -62,7 +62,7 @@ _p.makeTurn = function(column) {
         }
     }
     // check if column has free row - if not, end turn
-    let row = this.getEmptyRow(column);
+    let row = this._getEmptyRow(column);
     if (row == -1) {
         return {
             status: BoardModel.ILLEGAL_TURN
