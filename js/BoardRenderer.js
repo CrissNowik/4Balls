@@ -46,8 +46,8 @@ _p._drawBackground = function(){
     let ctx = this._ctx;
 
 // background
-    let gradient = ctx.createLinearGradient(0,0,0, 300);
-    gradient.addColorStop(0, '#fff');
+    let gradient = ctx.createLinearGradient(0,0,0, this._heigth);
+    gradient.addColorStop(0, '#fffbb3');
     gradient.addColorStop(1, '#c6c602');
     ctx.fillStyle = gradient;
     ctx.fillRect(0,0, this._width, this._height);
@@ -86,7 +86,7 @@ _p._drawGrid = function(){
     }
 // draw outline
     ctx.strokeStyle = "#CCC";
-    ctx.stroke()
+    ctx.stroke = "#000";
 };
 /**
  * draw single dot with gradient

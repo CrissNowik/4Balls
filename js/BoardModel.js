@@ -16,7 +16,7 @@ function BoardModel(cols, rows) {
 }
 _p = BoardModel.prototype;
 
-// variables useful for easier understanding code
+// letiables useful for easier understanding code
 BoardModel.EMPTY = 0; 
 BoardModel.WHITE = 1;
 BoardModel.BLACK = 2;
@@ -123,7 +123,7 @@ _p._checkWinDirection = function(column, row, deltaX, deltaY) {
             r < this._rows &&
             this.getPiece(c,r) == pieceColor) {
         c += deltaX;
-        r += deltaYl
+        r += deltaY;
         tokenCounter++;
     }
     return tokenCounter;
