@@ -14,7 +14,7 @@ Technology stack:
 
 Demo:
 -----
-[Click to play 4Balls]
+Click to [Play 4Balls]
 
 Copyright:
 ----------
