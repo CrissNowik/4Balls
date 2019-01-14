@@ -27,3 +27,13 @@ h1 {
     font-family: 'Coiny', cursive;
     font-size: 40px;
 }
+
+.mainScreen__welcome {
+    display: block;
+    background-color: #008000;
+    height: 100vh;
+}
+
+.mainScreen__canvasContainer {
+    display: none;
+}
