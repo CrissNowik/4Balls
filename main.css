@@ -27,3 +27,12 @@ h1 {
     font-family: 'Coiny', cursive;
     font-size: 40px;
 }
+
+.mainScreen__container {
+    background-color: #008000;
+    height: 100vh;
+}
+
+.gameScreen {
+    display: none;
+}

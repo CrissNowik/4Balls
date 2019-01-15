@@ -14,7 +14,7 @@
             let game;
     
             function init(){
-                canvas = initFullScreenCanvas("mainCanvas__canvas");
+                canvas = initFullScreenCanvas("gameScreen__canvas");
                 game = new Game(canvas);
 
                 if (isTouchDevice()) {
@@ -63,8 +63,29 @@ change canvas size
         <header class="header">
             <h1 class="header__title">4 Balls</h1>
         </header>
-        <main class="mainCanvas">
-            <canvas id="mainCanvas__canvas" width="300px" height="300px"></canvas>
+        <main class="mainScreen">
+            <div class="mainScreen__container">
+                <div class="mainScreen__welcome">
+            
+                </div>
+                <div class="mainScreen__instruction">
+    
+                </div>
+                <div class="mainScreen__players">
+                    <form class="mainScreen__form" action="">
+                        First name:<br>
+                        <input class="mainScreen__input" type="text" name="firstname" value="">
+                        <br>
+                        Last name:<br>
+                        <input class="mainScreen__input" type="text" name="lastname" value="">
+                        <br><br>
+                        <input class="mainScreen__btn" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>  
+            <div class="gameScreen">
+                <canvas id="gameScreen__canvas" width="300px" height="300px"></canvas>
+            </div>
         </main>
     </body> 
 </html>
