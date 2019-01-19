@@ -14,7 +14,7 @@
             let game;
     
             function init(){
-                canvas = initFullScreenCanvas("mainCanvas__canvas");
+                canvas = initFullScreenCanvas("gameScreen__canvas");
                 game = new Game(canvas);
 
                 if (isTouchDevice()) {
@@ -73,6 +73,7 @@ change canvas size
                         <div class="mainScreen__circle shake-vertical"></div>
                         <div class="mainScreen__circle odd"></div>
                     </div>
+            
                 </div>
                 <div class="mainScreen__instruction">
     

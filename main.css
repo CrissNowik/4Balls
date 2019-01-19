@@ -254,3 +254,11 @@ color: #f4f400;
               transform: translateY(-6.4px);
     }
   }
+.mainScreen__container {
+    background-color: #008000;
+    height: 100vh;
+}
+
+.gameScreen {
+    display: none;
+}
