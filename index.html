@@ -61,10 +61,37 @@ change canvas size
     </head>
     <body onload="init()">
         <header class="header">
-            <h1 class="header__title">4 Balls</h1>
+            <h1 class="header__title"></h1>
         </header>
-        <main class="mainCanvas">
-            <canvas id="mainCanvas__canvas" width="300px" height="300px"></canvas>
+        <main class="mainScreen">
+            <div class="mainScreen__container">
+                <div class="mainScreen__welcome">
+                    <h1 class="mainScreen__header">4 Balls</h1>
+                    <div class="mainScreen__circleContainer">
+                        <div class="mainScreen__circle shake-vertical"></div>
+                        <div class="mainScreen__circle odd"></div>
+                        <div class="mainScreen__circle shake-vertical"></div>
+                        <div class="mainScreen__circle odd"></div>
+                    </div>
+                </div>
+                <div class="mainScreen__instruction">
+    
+                </div>
+                <div class="mainScreen__players">
+                    <form class="mainScreen__form" action="">
+                        First name:<br>
+                        <input class="mainScreen__input" type="text" name="firstname" value="">
+                        <br>
+                        Last name:<br>
+                        <input class="mainScreen__input" type="text" name="lastname" value="">
+                        <br><br>
+                        <input class="mainScreen__btn" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>  
+            <div class="gameScreen">
+                <canvas id="gameScreen__canvas" width="300px" height="300px"></canvas>
+            </div>
         </main>
     </body> 
 </html>
