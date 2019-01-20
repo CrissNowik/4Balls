@@ -10,6 +10,7 @@ Technology stack:
 * HTML5,
 * HTML5 Canvas,
 * Java Script (ES6)
+* CSS + SASS
 
 
 Demo:
