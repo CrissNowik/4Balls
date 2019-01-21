@@ -15,6 +15,7 @@
         font-size: 140px;
         color: #f4f400;
         @include gradient-mainScreen__header;
+        @include shadow-mainScreen__circle;
     }
     .mainScreen__circleContainer{
         display: flex;
@@ -26,7 +27,7 @@
             height: 100px;
             border-radius: 50%;
             margin: 0 20px 0 20px;
-            // @include shadow-mainScreen__circle;
+            
         }
     }
     .mainScreen__shadowContainer{
@@ -34,27 +35,31 @@
         align-content: center;
         justify-content: center;
         flex-direction: row;
-        .mainScreen__shadows{
-            width: 100px;
+        .mainScreen__shadows--even{
+            width: 70px;
             height: 10px;
             border-radius: 50%;
-            margin: 8px 20px 0 20px;
+            margin: 1px 35px 0 35px;
             background-color: #000;
+            opacity: 0.5;
+            @include anima-shakeHorizontal;
+        }
+        .mainScreen__shadows--odd{
+            @extend .mainScreen__shadows--even;
+            @include anima-shakeHorizontal--odd;
         }
     }
  }
 
- 
-
-.shakeVertical {
-    @include anima-shakeVertical;
+.even {
     @include gradient-mainScreen__circle;
+    @include anima-shakeHorizontal;
 }
 .odd{
     @include gradient-odd;
-    @include anima-odd;
-   
+    @include anima-shakeHorizontal--odd;
  }
+
 
 
 
