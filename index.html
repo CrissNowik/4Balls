@@ -82,6 +82,16 @@ change canvas size
                 </div>
                 <div class="mainScreen__instruction" id="instruction">
                     <h2 class="mainScreen__smallHeader">Instruction</h2>
+                    <div class="mainScreen__display">
+                        <img src="res/#" alt="instruction draw - playboard" class="mainScreen__draw" id="goToDraw2">
+                        <img src="res/#" alt="instruction draw - putting bals" class="mainScreen__draw" id="goToDraw3">
+                        <img src="res/#" alt="instruction draw - how to win" class="mainScreen__draw" id="goToDraw4">
+                        <img src="res/#" alt="call to action- ready to play?" class="mainScreen__draw" id="goToPlayers">
+                    </div>
+                    <div class="mainScreen__btnContainer">
+                        <button class="switch" id="prevDraw" value="< Previous"></button>
+                        <button class="switch" id="nextDraw" value="Next >" autofocus></button>
+                    </div>
                 </div>
                 <div class="mainScreen__players" id="players">
                     <form class="mainScreen__form" action="">
@@ -91,7 +101,7 @@ change canvas size
                         Last name:<br>
                         <input class="mainScreen__input" type="text" name="lastname" value="">
                         <br><br>
-                        <input class="mainScreen__btn" type="submit" value="Submit">
+                        <input class="mainScreen__btn" id="goToGame" type="submit" value="Let's play!">
                     </form>
                 </div>
             </div>  

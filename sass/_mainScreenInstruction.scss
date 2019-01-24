@@ -1,5 +1,21 @@
 
 
 .mainScreen__instruction { 
-display: none;
+    display: none;
+    .mainScreen__smallHeader { 
+
+    }
+    .mainScreen__display { 
+        .mainScreen__draw {
+            display: none;
+         }
+    }
+
+    .mainScreen__btnContainer {
+        .switch { 
+            
+        }
+    }
 }
+
+
