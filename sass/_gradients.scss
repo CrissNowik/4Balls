@@ -22,11 +22,11 @@
 @mixin gradient-mainScreen__circle {
     background: #f4f400;
     /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #f4f400 0%, #000000 50%, #000000 50%, #f4f400 100%);
+    background: -moz-radial-gradient(top left, ellipse cover, #f4f400 0%, #000000 50%, #000000 50%, #f4f400 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, #f4f400 0%, #000000 50%, #000000 50%, #f4f400 100%);
+    background: -webkit-radial-gradient(at top left, ellipse cover, #f4f400 0%, #000000 50%, #000000 50%, #f4f400 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center, #f4f400 0%, #000000 50%, #000000 50%, #f4f400 100%);
+    background: radial-gradient(ellipse at top left, #f4f400 0%, #000000 50%, #000000 50%, #f4f400 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f400', endColorstr='#f4f400', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -35,11 +35,11 @@
 @mixin gradient-odd {
     background: #f4f400;
     /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #f4f400 1%, #a3a3a3 50%, #f4f400 100%);
+    background: -moz-radial-gradient(top left, ellipse cover, #f4f400 1%, #a3a3a3 50%, #f4f400 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, #f4f400 1%, #a3a3a3 50%, #f4f400 100%);
+    background: -webkit-radial-gradient(at top left, ellipse cover, #f4f400 1%, #a3a3a3 50%, #f4f400 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center, #f4f400 1%, #a3a3a3 50%, #f4f400 100%);
+    background: radial-gradient(ellipse at top left, #f4f400 1%, #a3a3a3 50%, #f4f400 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f400', endColorstr='#f4f400', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */

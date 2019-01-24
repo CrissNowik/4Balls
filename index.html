@@ -64,8 +64,8 @@ change canvas size
             <h1 class="header__title"></h1>
         </header>
         <main class="mainScreen">
-            <div class="mainScreen__container">
-                <div class="mainScreen__welcome">
+            <div class="mainScreen__container" id="main">
+                <div class="mainScreen__welcome" id="welcome">
                     <h1 class="mainScreen__header">4 Balls</h1>
                     <div class="mainScreen__circleContainer">
                         <div class="mainScreen__circle even"></div>
@@ -80,10 +80,10 @@ change canvas size
                         <div class="mainScreen__shadows--odd"></div>
                     </div>
                 </div>
-                <div class="mainScreen__instruction">
-    
+                <div class="mainScreen__instruction" id="instruction">
+                    <h2 class="mainScreen__smallHeader">Instruction</h2>
                 </div>
-                <div class="mainScreen__players">
+                <div class="mainScreen__players" id="players">
                     <form class="mainScreen__form" action="">
                         First name:<br>
                         <input class="mainScreen__input" type="text" name="firstname" value="">
@@ -95,9 +95,10 @@ change canvas size
                     </form>
                 </div>
             </div>  
-            <div class="gameScreen">
+            <div class="gameScreen" id="game">
                 <canvas id="gameScreen__canvas" width="300px" height="300px"></canvas>
             </div>
         </main>
     </body> 
+    <script src="js/Website.js"></script>
 </html>
