@@ -1,19 +1,35 @@
-
+@import "animations", "gradients", "shadows", "mixins";
 
 .mainScreen__instruction { 
     display: none;
+    @include mainScreenLook;
     .mainScreen__smallHeader { 
-
+        font-size: 40px;
+        @include header;
     }
     .mainScreen__display { 
+        display: flex;
+        margin: 0 auto;
+        width: 90%;
+        height: 50%;
+        border: 1px solid #000;
+        margin-bottom: 20px;
+        @include shadow-mainScreen__circle;
         .mainScreen__draw {
             display: none;
          }
     }
 
     .mainScreen__btnContainer {
+        display: flex;
+        justify-content: space-around;
         .switch { 
-            
+            color: #f4f400;
+            font-family: 'Coiny', cursive;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            @include gradient-mainScreen__circle;
         }
     }
 }

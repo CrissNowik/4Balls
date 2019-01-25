@@ -1,21 +1,11 @@
-@import "animations", "gradients", "shadows";
+@import "animations", "gradients", "shadows", "mixins";
 
 .mainScreen__welcome {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
     display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
+    @include mainScreenLook;
     .mainScreen__header {
-        text-align: center;
-        font-weight: bolder;
-        font-family: 'Coiny', cursive;
         font-size: 140px;
-        color: #f4f400;
-        @include gradient-mainScreen__header;
-        @include shadow-mainScreen__circle;
+        @include header;
     }
     .mainScreen__circleContainer{
         display: flex;

@@ -1,5 +1,3 @@
-import { ftruncate } from "fs";
-
 /**
  * SS - ScreenSwitcher - object used for switching pages of the app
  */
@@ -24,7 +22,7 @@ const SS = {
         console.log();
     },
     _switchVisibility: function(){
-        
+
     }
 }
 
