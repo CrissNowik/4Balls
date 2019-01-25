@@ -1,13 +1,39 @@
+@import "mixins", "gradients";
+
 .mainScreen__players {
     display: none;
+    @include mainScreenLook;
     .mainScreen__form { 
-        .mainScreen__input {
+        display: flex;
+        flex-direction: row;
+            align-items: center;
+            justify-content: center;
 
+        .mainScreen__form--leftSide{
+            display: flex;
+            flex-direction: column;
+            .mainScreen__inputSet{
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+                .mainScreen__input {
+                    width: 100px;
+                    height: 10px;
+                }
+                .mainScreen__label{
+                    color: #000;
+                    font-family: 'Coiny', cursive;
+                }
+            }
         }
-        .mainScreen__btn { 
-
+        .mainScreen__btn {  
+            color: #f4f400;
+            font-family: 'Coiny', cursive;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            @include gradient-mainScreen__circle;
+            margin: 10px;
         }
     }
 }
-
-

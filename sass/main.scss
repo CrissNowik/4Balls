@@ -1,8 +1,5 @@
-@import 
-"gradients", 
-"mainScreenWelcome", 
-"mainScreenPlayers", 
-"mainScreenInstruction";
+@import "./_mainScreenInstruction", "./_mainScreenPlayers", "./mainScreenWelcome", "./gradients";
+
 
 html, body, .mainScreen {
     overflow: hidden;
