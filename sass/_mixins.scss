@@ -18,3 +18,11 @@
     @include gradient-mainScreen__header;
     @include shadow-mainScreen__circle;
 }
+
+@mixin btn {
+    color: #f4f400;
+    font-family: 'Coiny', cursive;
+    border-radius: 50%;
+    @include gradient-mainScreen__circle;
+    margin: 10px;
+}

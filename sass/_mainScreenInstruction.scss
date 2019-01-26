@@ -10,7 +10,7 @@
     .mainScreen__display { 
         display: flex;
         margin: 0 auto;
-        width: 90%;
+        width: 70%;
         height: 50%;
         border: 1px solid #000;
         margin-bottom: 20px;
@@ -24,13 +24,9 @@
         display: flex;
         justify-content: space-around;
         .switch { 
-            color: #f4f400;
-            font-family: 'Coiny', cursive;
-            border-radius: 50%;
             width: 80px;
             height: 80px;
-            @include gradient-mainScreen__circle;
-            margin: 10px;
+            @include btn;
         }
     }
 }

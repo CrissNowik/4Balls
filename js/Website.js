@@ -16,7 +16,6 @@ const SS = {
     _goNext: function(toHide, toShow) {
         toHide.style.display = "none";
         toShow.style.display = "flex";
-        console.log();
     },
     _switchVisibility: function(){
 
@@ -35,5 +34,35 @@ SS.btnSkip.addEventListener("click", function(e){
 SS.btn1.addEventListener("click", function(e){
     e.preventDefault();
     SS._goNext(SS.screen1, SS.screen5);
+    IV.saveNames();    
 });
+
+/** 
+* IV = Input Validator - object used for form validation
+*
+*/
+
+const IV = {
+    saveNames: function() {
+        const playersArr = [];
+        const whitePlayer = document.getElementById("whitePlayer").value;
+        const blackPlayer = document.getElementById("blackPlayer").value;
+        playersArr.push( whitePlayer,blackPlayer);
+        console.log(playersArr);
+        return playersArr;
+    },
+    inputValidator: function () {
+        
+    console.log("test", this.saveNames());
+    
+    }
+}
+IV.inputValidator();
+
+
+
+
+
+
+
 

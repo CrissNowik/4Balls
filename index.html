@@ -99,18 +99,22 @@ change canvas size
                         <div class="mainScreen__form--leftSide">
                             <div class="mainScreen__inputSet">
                                 <label class="mainScreen__label">White Player</label> 
-                                <input class="mainScreen__input" type="text" name="firstname" value="">
+                                <input class="mainScreen__input" type="text" id="whitePlayer" value="">
                             </div>
                             <div class="mainScreen__inputSet">
                                 <label  class="mainScreen__label">Black Player</label>
-                                <input class="mainScreen__input" type="text" name="lastname" value="">
+                                <input class="mainScreen__input" type="text" id="blackPlayer" value="">
                             </div>
                         </div>
-                        <input class="mainScreen__btn" id="goToGame" type="submit" value="Let's play!">
+                        <input class="mainScreen__btn" id="goToGame" type="submit" value="Play!">
                     </form>
                 </div>
             </div>  
             <div class="gameScreen" id="game">
+                <div class="gameScreen__nameContainer">
+                    <p class="gameScreen__names"></p>
+                    <p class="gameScreen__names"></p>
+                </div>
                 <canvas id="gameScreen__canvas" width="300px" height="300px"></canvas>
             </div>
         </main>
