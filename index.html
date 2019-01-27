@@ -83,10 +83,10 @@ change canvas size
                 <div class="mainScreen__instruction" id="instruction">
                     <h2 class="mainScreen__smallHeader">Instructions</h2>
                     <div class="mainScreen__display">
-                        <img src="res/#" alt="instruction draw - playboard" class="mainScreen__draw">
-                        <img src="res/#" alt="instruction draw - putting bals" class="mainScreen__draw">
-                        <img src="res/#" alt="instruction draw - how to win" class="mainScreen__draw">
-                        <img src="res/#" alt="call to action- ready to play?" class="mainScreen__draw">
+                        <img src="res/#" alt="instruction draw - playboard" class="mainScreen__draw" id="draw-1">
+                        <img src="res/#" alt="instruction draw - putting bals" class="mainScreen__draw" id="draw-2">
+                        <img src="res/#" alt="instruction draw - how to win" class="mainScreen__draw" id="draw-3">
+                        <img src="res/#" alt="call to action- ready to play?" class="mainScreen__draw" id="draw-4">
                     </div>
                     <div class="mainScreen__btnContainer">
                         <button class="switch" id="prevDraw">Previous</button>
@@ -112,8 +112,9 @@ change canvas size
             </div>  
             <div class="gameScreen" id="game">
                 <div class="gameScreen__nameContainer">
-                    <p class="gameScreen__names"></p>
-                    <p class="gameScreen__names"></p>
+                    <p class="gameScreen__names--big" id="white"></p>
+                    <p class="gameScreen__names">VS</p>
+                    <p class="gameScreen__names--big" id="black"></p>
                 </div>
                 <canvas id="gameScreen__canvas" width="300px" height="300px"></canvas>
             </div>

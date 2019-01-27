@@ -35,4 +35,20 @@ html, body, .mainScreen {
 
 .gameScreen {
     display: none;
+    align-items: flex-start;
+    justify-content: center;
+    .gameScreen__nameContainer{
+        justify-content: center;
+        position: absolute;
+        z-index: 2;
+        .gameScreen__names{
+            font-size: 20px;
+            @include name;
+        }
+        .gameScreen__names--big{
+            margin: 20px;
+            font-size: 30px;
+            @include name;
+        }
+    }
 }

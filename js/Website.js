@@ -2,6 +2,7 @@
  * SS - ScreenSwitcher - object used for switching pages of the app
  */
 const SS = {
+    // DOM Elems stored
     screen1: document.getElementById("main"),
     screen2: document.getElementById("welcome"),
     screen3: document.getElementById("instruction"),
@@ -12,13 +13,69 @@ const SS = {
     btnSkip: document.getElementById("skip"),
     btn1: document.getElementById("goToGame"),
 
-// method used to switching pages of the game
+    drawIndex: 1,
+
+// method used to switching pages of the welcome screen
     _goNext: function(toHide, toShow) {
         toHide.style.display = "none";
         toShow.style.display = "flex";
     },
-    _switchVisibility: function(){
+// method used for changing visibility
+    _switchVisibility: function(n){
+        let i;
+        let draws = document.getElementsByClassName("mainScreen__draw");
+            if (n > draws.length) {
+                    this.drawIndex = 1
+                } 
+                if (n < 1) {
+                    this.drawIndex = draws.length
+                }
+                for (i = 0; i < draws.length; i++) {
+                    draws[i].style.display = "none"; 
+                }
+        draws[this.drawIndex-1].style.display = "flex"; 
+        },
+// method userd for switching instruction draws
+    plusMinusDraws: function(numb) {
+            this._switchVisibility(this.drawIndex += numb);
+        }
+    }
 
+/** 
+* IV = Input Validator - object used for form validation
+*
+*/
+const IV = {
+    saveNames: function() {
+        const playersArr = [];
+        let whitePlayer = document.getElementById("whitePlayer").value;
+        let blackPlayer = document.getElementById("blackPlayer").value;
+
+        playersArr.push( whitePlayer,blackPlayer);
+        return playersArr;
+    },
+    inputValidator: function () {
+        let playersArr = this.saveNames();
+        
+        if (playersArr[0] !== "" && playersArr[1] !== ""){
+                SS._goNext(SS.screen1, SS.screen5);
+                IV.saveNames();  
+        } else {
+            alert("Please write players names");
+        }
+    }
+}
+
+/**
+ *  NS - Names Shower - object used for showing names of players on gamescreen
+ */
+
+const NS = {
+    white: document.getElementById("white"),   
+    black: document.getElementById("black"),
+    writeNames: function(forWhite, forBlack){
+        this.white.innerText = forWhite;
+        this.black.innerText = forBlack;
     }
 }
 
@@ -31,35 +88,23 @@ SS.btnSkip.addEventListener("click", function(e){
     e.preventDefault();
     SS._goNext(SS.screen3, SS.screen4);
 });
+
 SS.btn1.addEventListener("click", function(e){
     e.preventDefault();
-    SS._goNext(SS.screen1, SS.screen5);
-    IV.saveNames();    
+    let playersArr = IV.saveNames();
+    IV.inputValidator();
+    NS.writeNames(playersArr[0], playersArr[1]);
+});
+// slide switches
+SS.btnPrev.addEventListener("click", function(e){
+    e.preventDefault();
+    SS.plusMinusDraws(-1);
 });
 
-/** 
-* IV = Input Validator - object used for form validation
-*
-*/
-
-const IV = {
-    saveNames: function() {
-        const playersArr = [];
-        const whitePlayer = document.getElementById("whitePlayer").value;
-        const blackPlayer = document.getElementById("blackPlayer").value;
-        playersArr.push( whitePlayer,blackPlayer);
-        console.log(playersArr);
-        return playersArr;
-    },
-    inputValidator: function () {
-        
-    console.log("test", this.saveNames());
-    
-    }
-}
-IV.inputValidator();
-
-
+SS.btnNext.addEventListener("click", function(e){
+    e.preventDefault();
+    SS.plusMinusDraws(1);
+});
 
 
 
