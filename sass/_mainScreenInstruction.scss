@@ -31,4 +31,26 @@
     }
 }
 
-
+@media screen and (max-width : 850px) { 
+    .mainScreen__instruction { 
+        .mainScreen__smallHeader { 
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .mainScreen__display { 
+            width: 90%;
+            height: 70%;
+            margin-bottom: 0;
+            .mainScreen__draw {
+                display: none;
+             }
+        }
+        .mainScreen__btnContainer {
+            .switch { 
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

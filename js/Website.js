@@ -13,7 +13,7 @@ const SS = {
     btnSkip: document.getElementById("skip"),
     btn1: document.getElementById("goToGame"),
 
-    drawIndex: 1,
+    drawIndex: 0,
 
 // method used to switching pages of the welcome screen
     _goNext: function(toHide, toShow) {

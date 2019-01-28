@@ -3,30 +3,35 @@
 .mainScreen__welcome {
     display: flex;
     @include mainScreenLook;
+
     .mainScreen__header {
         font-size: 140px;
         @include header;
     }
-    .mainScreen__circleContainer{
+
+    .mainScreen__circleContainer {
         display: flex;
         align-content: center;
         justify-content: center;
         flex-direction: row;
+
         .mainScreen__circle {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             margin: 0 20px 0 20px;
             border: 1px solid #aaa;
-            
+
         }
     }
-    .mainScreen__shadowContainer{
+
+    .mainScreen__shadowContainer {
         display: flex;
         align-content: center;
         justify-content: center;
         flex-direction: row;
-        .mainScreen__shadows--even{
+
+        .mainScreen__shadows--even {
             width: 70px;
             height: 10px;
             border-radius: 50%;
@@ -35,39 +40,43 @@
             opacity: 0.5;
             @include anima-shakeHorizontal;
         }
-        .mainScreen__shadows--odd{
+
+        .mainScreen__shadows--odd {
             @extend .mainScreen__shadows--even;
             @include anima-shakeHorizontal--odd;
         }
     }
- }
+}
 
 .even {
     @include gradient-mainScreen__circle;
     @include anima-shakeHorizontal;
 }
-.odd{
+
+.odd {
     @include gradient-odd;
     @include anima-shakeHorizontal--odd;
- }
+}
 
- @media screen and (max-width : 820px) { 
+@media screen and (max-width : 820px) {
     .mainScreen__welcome {
         .mainScreen__header {
             font-size: 80px;
             @include header;
         }
-        .mainScreen__circleContainer{
+
+        .mainScreen__circleContainer {
             .mainScreen__circle {
                 width: 60px;
                 height: 60px;
                 border-radius: 50%;
                 margin: 0 10px 0 10px;
-                border: 1px solid #aaa;  
+                border: 1px solid #aaa;
             }
         }
-        .mainScreen__shadowContainer{
-            .mainScreen__shadows--even{
+
+        .mainScreen__shadowContainer {
+            .mainScreen__shadows--even {
                 width: 32px;
                 height: 10px;
                 margin: 1px 25px 0 25px;
