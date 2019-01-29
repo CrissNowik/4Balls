@@ -23,7 +23,7 @@ const SS = {
 // method used for changing visibility
     _switchVisibility: function(n){
         let i;
-        let draws = document.getElementsByClassName("mainScreen__draw");
+        let draws = document.getElementsByClassName("mainScreen__drawContainer");
             if (n > draws.length) {
                     this.drawIndex = 1
                 } 
