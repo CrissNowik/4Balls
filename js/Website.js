@@ -12,6 +12,8 @@ const SS = {
     btnNext: document.getElementById("nextDraw"),
     btnSkip: document.getElementById("skip"),
     btn1: document.getElementById("goToGame"),
+    instr1: document.getElementById("instr"),
+    draw1: document.getElementById("draw-1"),
 
     drawIndex: 0,
 
@@ -79,6 +81,13 @@ const NS = {
     }
 }
 
+/**
+ *  DS - Device Size - object used for loading proper size of photo when is mobile device
+ */
+const DS = {
+
+}
+
 // main screen switches
 SS.screen2.addEventListener("click", function(e){
     e.preventDefault();
@@ -105,6 +114,15 @@ SS.btnNext.addEventListener("click", function(e){
     e.preventDefault();
     SS.plusMinusDraws(1);
 });
+SS.btnPrev.addEventListener("click", function(e){
+    e.preventDefault();
+    SS._goNext(SS.instr1,SS.draw1);
+})
+SS.btnNext.addEventListener("click", function(e){
+    e.preventDefault();
+    SS._goNext(SS.instr1, SS.draw1);
+})
+
 
 
 
