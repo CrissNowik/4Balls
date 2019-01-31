@@ -85,8 +85,37 @@ const NS = {
  *  DS - Device Size - object used for loading proper size of photo when is mobile device
  */
 const DS = {
+// this method checks every 3 seconds screen size and load proper draw
+    _widthChecker: function(){
+        let width = window.screen.width;
 
+        setInterval(() => {
+          width =   window.screen.width;
+          console.log("widthChecker", width);
+          
+        }, 3000);
+        return width;
+    },
+    draw1 : document.getElementById("draw-1"),
+    draw2 : document.getElementById("draw-2"),
+    draw3 : document.getElementById("draw-3"),
+    draw4 :  document.getElementById("draw-4"),
+    loadBigPhoto: function(width){
+        console.log("width", width);
+    // TO DO TO DO TO DO - stil not loading proper photo
+        if (width > 850) {        
+            //if big screen load bigger draw    
+            this.draw1.src = "res/1xl.png"
+            console.log("suuukces",  this.draw1.src);
+        } else {
+            //if small screen use default small photo
+            this.draw1.src = "res/1s.png";
+            console.log("suuukces",  this.draw1.src);
+        }
+    }
 }
+DS.loadBigPhoto(DS._widthChecker());
+
 
 // main screen switches
 SS.screen2.addEventListener("click", function(e){
@@ -122,6 +151,8 @@ SS.btnNext.addEventListener("click", function(e){
     e.preventDefault();
     SS._goNext(SS.instr1, SS.draw1);
 })
+
+
 
 
 
