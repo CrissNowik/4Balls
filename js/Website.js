@@ -13,7 +13,7 @@ const SS = {
     btnSkip: document.getElementById("skip"),
     btn1: document.getElementById("goToGame"),
     instr1: document.getElementById("instr"),
-    draw1: document.getElementById("draw-1"),
+    drawWelcome: document.getElementById("draw-1"),
 
     drawIndex: 0,
 
@@ -88,34 +88,32 @@ const DS = {
 // this method checks every 3 seconds screen size and load proper draw
     _widthChecker: function(){
         let width = window.screen.width;
-
-        setInterval(() => {
-          width =   window.screen.width;
-          console.log("widthChecker", width);
-          
-        }, 3000);
         return width;
     },
-    draw1 : document.getElementById("draw-1"),
-    draw2 : document.getElementById("draw-2"),
-    draw3 : document.getElementById("draw-3"),
-    draw4 :  document.getElementById("draw-4"),
-    loadBigPhoto: function(width){
-        console.log("width", width);
-    // TO DO TO DO TO DO - stil not loading proper photo
+    draw4 : document.getElementById("draw-4"),
+    draws: [document.getElementById("draw-1"), document.getElementById("draw-2"), document.getElementById("draw-3")],
+    _loadBigPhoto: function(width){
         if (width > 850) {        
-            //if big screen load bigger draw    
-            this.draw1.src = "res/1xl.png"
-            console.log("suuukces",  this.draw1.src);
+//if big screen load bigger draw                
+            for (let i = 0; i < 3; i++) {
+                this.draws[i].src = "res/" + [i] + "xl.png"                
+             }
+             this.draw4.src = "res/0xl.png";
         } else {
-            //if small screen use default small photo
-            this.draw1.src = "res/1s.png";
-            console.log("suuukces",  this.draw1.src);
+//if small screen use default small photo
+            for (let i = 0; i < 3; i++) {
+                this.draws[i].src = "res/" + [i] + "s.png"
+            }
+            this.draw4.src = "res/0s.png";
         }
     }
 }
-DS.loadBigPhoto(DS._widthChecker());
 
+// screen size photo loader
+setInterval(() => {
+    let width = DS._widthChecker()
+    DS._loadBigPhoto(width);
+    }, 1000);
 
 // main screen switches
 SS.screen2.addEventListener("click", function(e){
@@ -145,11 +143,11 @@ SS.btnNext.addEventListener("click", function(e){
 });
 SS.btnPrev.addEventListener("click", function(e){
     e.preventDefault();
-    SS._goNext(SS.instr1,SS.draw1);
+    SS._goNext(SS.instr1,SS.drawWelcome);
 })
 SS.btnNext.addEventListener("click", function(e){
     e.preventDefault();
-    SS._goNext(SS.instr1, SS.draw1);
+    SS._goNext(SS.instr1, SS.drawWelcome);
 })
 
 
