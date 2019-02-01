@@ -90,21 +90,18 @@ const DS = {
         let width = window.screen.width;
         return width;
     },
-    draw4 : document.getElementById("draw-4"),
-    draws: [document.getElementById("draw-1"), document.getElementById("draw-2"), document.getElementById("draw-3")],
+    draws: [document.getElementById("draw-1"), document.getElementById("draw-2"), document.getElementById("draw-3"), document.getElementById("draw-4")],
     _loadBigPhoto: function(width){
         if (width > 850) {        
 //if big screen load bigger draw                
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 4; i++) {
                 this.draws[i].src = "res/" + [i] + "xl.png"                
              }
-             this.draw4.src = "res/0xl.png";
         } else {
-//if small screen use default small photo
-            for (let i = 0; i < 3; i++) {
+//if small screen use default small draw
+            for (let i = 0; i < 4; i++) {
                 this.draws[i].src = "res/" + [i] + "s.png"
             }
-            this.draw4.src = "res/0s.png";
         }
     }
 }

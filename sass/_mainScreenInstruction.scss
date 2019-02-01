@@ -12,7 +12,7 @@
     .mainScreen__display {
         display: flex;
         margin: 0 auto;
-        width: 50%;
+        width: 80%;
         height: 50%;
         border: 1px solid #000;
         margin-bottom: 20px;
@@ -57,7 +57,47 @@
     }
 }
 
-@media screen and (max-width : 850px) {
+@media screen and (max-height : 415px) and (orientation: landscape) {
+    .mainScreen__instruction {
+        .mainScreen__smallHeader {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .mainScreen__display {
+            width: 90%;
+            height: 70%;
+            margin-bottom: 0;
+            
+            
+            .mainScreen__drawContainer {
+                display: none;
+                flex-direction: row;
+                align-content: flex-start;
+                justify-content: center;
+                align-items:center;
+                .mainScreen__draw {
+                    height: 100%;
+                }
+                .mainScreen__drawDescription {
+                position: relative;
+                z-index: 1;
+                }
+            }
+        }
+
+        .mainScreen__btnContainer {
+            .switch {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 550px) {
     .mainScreen__instruction {
         .mainScreen__smallHeader {
             font-size: 20px;
@@ -72,6 +112,16 @@
             
             .mainScreen__drawContainer {
                 display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                .mainScreen__draw {
+                    width: 100%;
+                    height: max-content;
+                }
+                .mainScreen__drawDescription {
+                position: inherit;
+                }
             }
         }
 
@@ -83,3 +133,4 @@
         }
     }
 }
+
